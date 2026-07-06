@@ -66,4 +66,21 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach((section) => {
     observer.observe(section);
   });
+
+  // 4. Lazy load videos — play when in view, pause when out
+  const videos = document.querySelectorAll("video");
+  const videoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(() => {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  videos.forEach((video) => videoObserver.observe(video));
 });
