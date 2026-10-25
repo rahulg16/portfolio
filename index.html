@@ -12,12 +12,14 @@
       content="fashion marketing, brand strategy, influencer marketing, portfolio"
     />
     <title>Varsha Shidling - Portfolio</title>
-    <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="styles.min.css" as="style" />
     <link rel="preload" as="image" href="./assets/optimized/varsha-main.webp" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.min.css" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap"
       rel="stylesheet"
@@ -397,7 +399,6 @@
         <div class="case-study-row">
           <div class="cs-image">
             <video
-              src="./assets/optimized/mothers-day-video.mp4"
               class="rounded-img"
               poster="./assets/optimized/mothers-day-video-poster.webp"
               muted
@@ -405,7 +406,10 @@
               autoplay
               playsinline
               preload="none"
-            ></video>
+            >
+              <source src="./assets/optimized/mothers-day-video.webm" type="video/webm" />
+              <source src="./assets/optimized/mothers-day-video.mp4" type="video/mp4" />
+            </video>
           </div>
           <div class="cs-content">
             <div class="caps text-rust">🏵️ CAMPAIGN</div>
@@ -444,7 +448,6 @@
           </div>
           <div class="cs-image">
             <video
-              src="./assets/optimized/A&R%20Summer%20Video%20Portrait%20.mp4"
               class="rounded-img"
               poster="./assets/optimized/AR-summer-poster.webp"
               muted
@@ -452,7 +455,10 @@
               autoplay
               playsinline
               preload="none"
-            ></video>
+            >
+              <source src="./assets/optimized/A&R%20Summer%20Video%20Portrait%20.webm" type="video/webm" />
+              <source src="./assets/optimized/A&R%20Summer%20Video%20Portrait%20.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
         <div class="spring-summer-gallery">
@@ -612,18 +618,19 @@
           <div class="reels-grid">
             <div class="reel-item">
               <video
-                src="./assets/optimized/AW26-story-(1).mp4"
                 class="reel-media"
                 muted
                 loop
                 autoplay
                 playsinline
                 preload="none"
-              ></video>
+              >
+                <source src="./assets/optimized/AW26-story-(1).webm" type="video/webm" />
+                <source src="./assets/optimized/AW26-story-(1).mp4" type="video/mp4" />
+              </video>
             </div>
             <div class="reel-item">
               <video
-                src="./assets/optimized/AW26-story-(2).mp4"
                 class="reel-media"
                 poster="./assets/optimized/AW26-2-poster.webp"
                 muted
@@ -631,30 +638,36 @@
                 autoplay
                 playsinline
                 preload="none"
-              ></video>
+              >
+                <source src="./assets/optimized/AW26-story-(2).webm" type="video/webm" />
+                <source src="./assets/optimized/AW26-story-(2).mp4" type="video/mp4" />
+              </video>
             </div>
             <div class="reel-item">
-              <picture>
-                <source srcset="./assets/optimized/AW26-story-3.webp" type="image/webp" />
-                <img
-                  src="./assets/AW26-story-3.jpg"
-                  class="reel-media"
-                  alt="AW26 story"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
+            <picture>
+              <source srcset="./assets/optimized/AW26-story-3.webp" type="image/webp" />
+              <img
+                src="./assets/AW26-story-3.jpg"
+                class="reel-media"
+                alt="AW26 story"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </picture>
             </div>
             <div class="reel-item">
               <video
-                src="./assets/optimized/AW26-story-4.mp4"
                 class="reel-media"
                 muted
                 loop
                 autoplay
                 playsinline
                 preload="none"
-              ></video>
+              >
+                <source src="./assets/optimized/AW26-story-4.webm" type="video/webm" />
+                <source src="./assets/optimized/AW26-story-4.mp4" type="video/mp4" />
+              </video>
             </div>
             <div class="reel-item">
               <video
@@ -781,6 +794,6 @@
       </footer>
     </section>
 
-    <script src="script.js"></script>
+    <script src="script.min.js" defer></script>
   </body>
 </html>
